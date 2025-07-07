@@ -92,3 +92,15 @@ WHERE person_id NOT IN (
 
 -- lesson10 start
 -- lesson10 start
+-- Q9: 開発部に所属している女性の平均年齢を取得
+SELECT AVG(age) AS average_age FROM people WHERE department_id = 2 AND gender = 2;
+-- Q10: 名前、部署名、提出した日報の内容を取得（未提出者は含まない）
+SELECT p.name, d.name AS department_name, r.content FROM people p INNER JOIN departments d ON p.department_id = d.department_id INNER JOIN reports r ON p.person_id = r.person_id;
+-- Q11: 部署ごとの日報投稿数（多い順）
+SELECT d.name AS department_name, COUNT(r.report_id) AS report_count FROM departments d INNER JOIN people p ON d.department_id = p.department_id INNER JOIN reports r ON p.person_id = r.person_id GROUP BY d.department_id ORDER BY report_count DESC;
+-- Q9: 開発部に所属している女性の平均年齢を取得
+SELECT AVG(age) AS average_age FROM people WHERE department_id = 2 AND gender = 2;
+-- Q10: 名前、部署名、提出した日報の内容を取得（未提出者は含まない）
+SELECT p.name, d.name AS department_name, r.content FROM people p INNER JOIN departments d ON p.department_id = d.department_id INNER JOIN reports r ON p.person_id = r.person_id;
+-- Q11: 部署ごとの日報投稿数（多い順）
+SELECT d.name AS department_name, COUNT(r.report_id) AS report_count FROM departments d INNER JOIN people p ON d.department_id = p.department_id INNER JOIN reports r ON p.person_id = r.person_id GROUP BY d.department_id ORDER BY report_count DESC;
