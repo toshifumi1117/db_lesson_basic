@@ -104,3 +104,6 @@ SELECT AVG(age) AS average_age FROM people WHERE department_id = 2 AND gender = 
 SELECT p.name, d.name AS department_name, r.content FROM people p INNER JOIN departments d ON p.department_id = d.department_id INNER JOIN reports r ON p.person_id = r.person_id;
 -- Q11: 部署ごとの日報投稿数（多い順）
 SELECT d.name AS department_name, COUNT(r.report_id) AS report_count FROM departments d INNER JOIN people p ON d.department_id = p.department_id INNER JOIN reports r ON p.person_id = r.person_id GROUP BY d.department_id ORDER BY report_count DESC;
+
+
+-- テスト用コメント
