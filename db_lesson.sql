@@ -90,6 +90,7 @@ FROM people
 WHERE department_id = 1   -- 営業部のID
 ORDER BY age ASC;
 
+
 -- ========================================
 -- Q9: 開発部に所属している女性の平均年齢を取得
 -- ========================================
@@ -97,7 +98,6 @@ SELECT AVG(age) AS average_age
 FROM people
 WHERE department_id = 2   -- 開発部のID
   AND gender = 2;
-
 
 -- ========================================
 -- Q10: 名前・部署名・日報内容を同時取得
